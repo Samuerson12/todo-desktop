@@ -9,6 +9,25 @@ files:
   - out/**/*
   - package.json
 
+# Windows
+win:
+  icon: resources/icon.png
+  target:
+    - target: nsis # produces a .exe setup wizard
+      arch: [x64]
+    - target: msi # produces an enterprise .msi
+      arch: [x64]
+
+nsis:
+  oneClick: false # show the install wizard
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: "Todo Desktop"
+msi:
+  oneClick: false
+  perMachine: false # install per-user, no admin required
+
 # macOS specific settings
 mac:
   icon: resources/icon.png
